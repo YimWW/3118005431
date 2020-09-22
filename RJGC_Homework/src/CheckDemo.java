@@ -6,30 +6,15 @@ public class CheckDemo {
 
         long startTime=System.currentTimeMillis();
 
-        String string1 = "string";
-        String string2 = "string";
+        String source = splitString("G:\\RJGC\\test\\orig.txt");
+        String target = splitString("G:\\RJGC\\test\\orig_0.8_add.txt");
 
-        float fl = Levenshtein_Distance(string1, string2);
+        float fl = Levenshtein_Distance(source, target);
         System.out.println(fl);
-
-        getString();
-
 
         long endTime=System.currentTimeMillis(); //获取结束时间
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
     }
-
-
-    public static void getString() {
-
-
-        String string = getD("G:\\RJGC\\test\\orig.txt");
-        String string2 = getD("G:\\RJGC\\test\\orig_0.8_add.txt");
-        float fl = Levenshtein_Distance(string, string2);
-        System.out.println(fl);
-
-    }
-
 
 
     public static float Levenshtein_Distance(String source, String target){
@@ -70,20 +55,19 @@ public class CheckDemo {
     }
 
 
-    public static String getD(String filePath){
+    public static String splitString(String filePath){
 
         StringBuilder buffer = new StringBuilder();
         BufferedReader bf;
         try {
             bf = new BufferedReader(new FileReader(filePath));
             String s;
-            while((s = bf.readLine())!=null){//使用readLine方法，一次读一行
+            while((s = bf.readLine())!=null){
                 buffer.append(s.trim());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         String[] splitAddress=buffer.toString().split("[^0-9a-zA-Z\\u4e00-\\u9fa5]");
         StringBuilder sb = new StringBuilder();
@@ -91,7 +75,7 @@ public class CheckDemo {
             sb.append(address);
         }
 
-
+        System.out.println(sb.toString());
         return  sb.toString();
     }
 
