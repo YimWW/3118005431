@@ -19,6 +19,8 @@ public class DuplicateCheck {
         }
         outputAnswerFile(savePath, fl);
 
+        System.out.println("相似度：" + fl);
+
     }
 
 
@@ -83,8 +85,7 @@ public class DuplicateCheck {
                 buffer.append(s.trim());
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("文件: "+ filePath +"输入路径错误");
+            System.out.println("文件: "+ filePath +"输入路径错误,请输入正确的文件路径");
         }
 
         /*
@@ -113,11 +114,8 @@ public class DuplicateCheck {
             bufferedWriter.flush();
             bufferedWriter.close();
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("答案文件: "+ filePath +"输入路径错误");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("答案文件: "+ filePath +"路径错误,请输入正确的路径");
         }
     }
 
