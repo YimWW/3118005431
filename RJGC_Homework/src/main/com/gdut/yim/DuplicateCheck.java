@@ -7,10 +7,6 @@ public class DuplicateCheck {
 
     public static void main(String[] args) {
 
-        System.out.println(args[0]);
-        System.out.println(args[1]);
-        System.out.println(args[2]);
-
         String source = splitString(args[0]);
         String target = splitString(args[1]);
         String savePath = null;
