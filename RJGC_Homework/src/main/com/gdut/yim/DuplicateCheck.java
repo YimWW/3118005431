@@ -19,7 +19,7 @@ public class DuplicateCheck {
         }
         outputAnswerFile(savePath, fl);
 
-        System.out.println("相似度：" + fl);
+        System.out.println("相似度：" + String.format("%.2f", fl));
 
     }
 
