@@ -63,7 +63,7 @@ public class DuplicateCheck {
             }
         }
 
-        return (1 - (float) matrix[source_len][target_len] / Math.max(source.length(), target.length())) * 100F;
+        return (1 - (float) matrix[source_len][target_len] / Math.max(source.length(), target.length()));
     }
 
 

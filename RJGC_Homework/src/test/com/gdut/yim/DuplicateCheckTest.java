@@ -149,12 +149,12 @@ public class DuplicateCheckTest {
 
 
     /*
-     * @method 输出路径为空
+     * @method 输出路径错误
      * @return void
      */
     @Test
-    public void testEmptyOut() {
-        String[] test = {"G:\\RJGC\\test1\\orig.txt", "G:\\RJGC\\test1\\orig_0.8_add.txt", ""};
+    public void testErrorOut() {
+        String[] test = {"G:\\RJGC\\test1\\orig.txt", "G:\\RJGC\\test1\\orig_0.8_add.txt", "E:\\testIO\\tet.txt"};
         DuplicateCheck.main(test);
     }
 }
